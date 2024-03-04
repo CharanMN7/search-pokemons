@@ -25,5 +25,86 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Search Pokemons</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <!--full width box-->
+      <div>
+        <!--icon-->
+        <img src="./assets/icon.svg" alt="pokeball" />
+        <!--app heading-->
+        <h1>search pokemon</h1>
+        <!--icon-->
+        <img src="./assets/icon.svg" alt="pokeball" />
+      </div>
+
+      <!--full width box housing 2 half width boxes-->
+      <div id="container">
+        <!--first box top bar with time & globe icon (only for creativity)-->
+        <div id="box1">
+          <span id="clock">Clock</span>
+          <span class="material-symbols-outlined"> globe </span>
+        </div>
+
+        <!--second box top bar with search bar, search button, random button-->
+        <form id="box2">
+          <input type="text" id="search-input" />
+          <button type="submit" id="search-button">Search</button>
+          <button id="random-pokemon">Random</button>
+        </form>
+      </div>
+    </header>
+
+    <!--full width box housing 2 half width boxes-->
+    <div id="content">
+      <!--first box housing the sprite image and the pokemon tags-->
+      <div id="box3">
+        <!--sprite-->
+        <img src="" alt="" id="sprite" />
+        <!--box that will contain name, id, height, weight, tag(s)-->
+        <div>
+          <p>
+            <span id="pokemon-name">Name</span>
+            <span id="pokemon-id">id</span>
+          </p>
+          <p>height <span id="height">val</span></p>
+          <p>weight <span id="weight">val</span></p>
+          <p id="types">tags</p>
+        </div>
+      </div>
+
+      <!--second box housing the stats with name, progress bar and number-->
+      <table id="box4">
+        <tr>
+          <td>HP</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="hp">Stat value</td>
+        </tr>
+        <tr>
+          <td>Attack</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="attack">Stat value</td>
+        </tr>
+        <tr>
+          <td>Defense</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="defense">Stat value</td>
+        </tr>
+        <tr>
+          <td>Special Attack</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="special-attack">Stat value</td>
+        </tr>
+        <tr>
+          <td>Special Defense</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="special-defense">Stat value</td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td><progress value="70" min="0" max="100"></progress></td>
+          <td id="speed">Stat value</td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>
