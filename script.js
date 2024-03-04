@@ -18,10 +18,31 @@ const defense = document.getElementById("defense");
 const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
+// api
+const api = "https://pokeapi.co/api/v2/pokemon/";
 
 /* Fucntions */
 // returns an abject containing all the required fields.
-const getData = async () => {};
+const getData = async (query) => {
+  const res = await fetch(api + query);
+  const data = await res.json();
+  console.log(data);
+  const pokemon = {};
+  pokemon.name = data.name;
+  pokemon.id = data.id;
+  pokemon.weight = data.weight;
+  pokemon.height = data.height;
+  pokemon.types = [];
+  data.types.forEach((obj) => {
+    pokemon.types.push(obj.type.name);
+  });
+  data.stats.forEach((obj) => {
+    pokemon[obj.stat.name] = obj.base_stat;
+  });
+  // pokemon.sprite = data.sprites.front_default;
+  pokemon.sprite = data.sprites.other.showdown.front_default;
+  return pokemon;
+};
 
 // updates the DOM with all the values recieved from API
 const update = async () => {};
