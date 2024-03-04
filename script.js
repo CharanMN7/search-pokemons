@@ -109,8 +109,12 @@ const reset = () => {
 
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const query = searchInput.value;
-  await search(query);
+  const query = searchInput.value.trim();
+  if (query == "") {
+    await search(query);
+  } else {
+    alert("Enter a pokemon's name");
+  }
 });
 
 randomButton.addEventListener("click", async () => {
