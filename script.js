@@ -1,3 +1,4 @@
+/* Constants */
 // search functionality + random
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
@@ -17,3 +18,16 @@ const defense = document.getElementById("defense");
 const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
+
+/* Fucntions */
+// returns an abject containing all the required fields.
+const getData = async () => {};
+
+// updates the DOM with all the values recieved from API
+const update = async () => {};
+
+// fetches data using the search query given by the user
+const search = async () => {};
+
+// fetches data of a random pokemon
+const random = async () => {};
