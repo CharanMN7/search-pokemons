@@ -47,6 +47,9 @@ const getData = async (query) => {
     });
     // pokemon.sprite = data.sprites.front_default;
     pokemon.sprite = data.sprites.other.showdown.front_default;
+    if (pokemon.sprite == null) {
+      pokemon.sprite = data.sprites.front_default;
+    }
     return pokemon;
   } catch (err) {}
 };
@@ -74,49 +77,33 @@ const update = async (data) => {
     specialDefense.textContent = pokemon["special-defense"];
     speed.textContent = pokemon.speed;
   } catch (err) {
-    alert("Pokemon not found...");
-    reset();
+    alert("Pokemon not found");
   }
 };
 
 // fetches data using the search query given by the user
 const search = async (query) => {
   const pokemon = await getData(query);
-  await update(pokemon);
+  return pokemon;
 };
 
 // fetches data of a random pokemon
 const randomPokemon = async () => {
-  const pokemon = Math.ceil(Math.random() * 1302);
-  searchInput.textContent = "";
-  await search(pokemon);
-};
-
-const reset = () => {
-  pokemonName.textContent = "";
-  pokemonId.textContent = "";
-  weight.textContent = "";
-  height.textContent = "";
-  types.innerHTML = "";
-  sprite.src = "";
-  hp.textContent = "";
-  attack.textContent = "";
-  defense.textContent = "";
-  specialAttack.textContent = "";
-  specialDefense.textContent = "";
-  speed.textContent = "";
+  const id = Math.ceil(Math.random() * 1025);
+  console.log(id);
+  searchInput.innerText = "";
+  const pokemon = await search(id);
+  await update(pokemon);
 };
 
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const query = searchInput.value.trim();
-  if (query == "") {
-    await search(query);
-  } else {
-    alert("Enter a pokemon's name");
-  }
+  const query = searchInput.value;
+  const pokemon = await search(query);
+  await update(pokemon);
 });
 
-randomButton.addEventListener("click", async () => {
+randomButton.addEventListener("click", async (e) => {
+  e.preventDefault();
   await randomPokemon();
 });
