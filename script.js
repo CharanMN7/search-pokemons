@@ -59,7 +59,7 @@ const update = async (data) => {
   try {
     const pokemon = await data;
     pokemonName.textContent = pokemon.name;
-    pokemonId.textContent = pokemon.id;
+    pokemonId.textContent = "#" + pokemon.id;
     weight.textContent = pokemon.weight;
     height.textContent = pokemon.height;
 
