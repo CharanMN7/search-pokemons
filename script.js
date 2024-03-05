@@ -107,3 +107,5 @@ randomButton.addEventListener("click", async (e) => {
   e.preventDefault();
   await randomPokemon();
 });
+
+// clock

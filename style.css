@@ -1,5 +1,5 @@
 :root {
-  --green: olive;
+  --yellow: #fbd849;
 }
 
 * {
@@ -31,8 +31,8 @@ h1 {
   box-shadow: 0 2px 5px #00000022;
   padding: 0 1rem;
   border-radius: 4px;
-  background-color: var(--green);
-  color: white;
+  background-color: var(--yellow);
+  color: #3466af;
 }
 
 .inner-container {
@@ -76,7 +76,7 @@ h1 {
 }
 
 #search-input:focus {
-  border: 1px solid var(--green);
+  border: 1px solid var(--yellow);
   outline: none;
 }
 
@@ -90,13 +90,17 @@ button {
   border-radius: 4px;
   padding: 0.3rem 0.7rem;
   margin-left: 0.25rem;
-  color: var(--green);
-  border: 1px solid var(--green);
-  background-color: #f8f9fa;
+  color: white;
+  border: 1px solid #21386e;
+  background-color: #3466af;
+}
+
+button:hover {
+  background-color: #21386e;
 }
 
 button:active {
-  background-color: whitesmoke;
+  background-color: #1d2c5e;
 }
 
 #box3 {
@@ -114,7 +118,7 @@ button:active {
   top: 2%;
   left: 3%;
   color: white;
-  background-color: #ffffff55;
+  background-color: #fbd84933;
   backdrop-filter: blur(10px);
   padding: 0.5rem;
 }
@@ -138,10 +142,11 @@ table {
 }
 
 td {
-  border: 1px solid white;
+  border: 1px solid #3466af;
   font-size: 1.2rem;
   padding: 0.3rem;
   min-width: 5rem;
+  color: #3466af;
 }
 
 #pokemon-name {
